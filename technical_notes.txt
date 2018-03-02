@@ -1,0 +1,39 @@
+Technical Notes
+---------------
+1. URLL requires socat, an advanced alternative to netcat, that allows to
+   establish both uni- and bi-directional TCP/UDP connections.
+2. While in listening mode, the socat program allows to specify a script which
+   it executes at each incoming request.
+3. Precisely, the configuration is-
+   - tcp-listen:1230 (to only listen to, only TCP requests)
+   - reuseaddr (to allow socat to reuse this port, in case the service was
+     started previously)
+   - fork (to fork a new process at each incoming request)
+   - system:<script_name> (to execute using system call, the <script_name>)
+4. For improving the user experience, the script starting the URLL module is
+   started by a system process rc.local that runs at system startup.
+   (Note: As an alternative to executing during startup, the URLL script was
+   made to start through .bashrc. However, this has two main disadvantages-
+   i- it requires the terminal to be opened at least once in order for the
+   URLL process to start and ii- consequently, the listener is started every
+   single time a terminal is opened.)
+5. However, as URLL is intended to be used by only non-root or normal users
+   (due to the very restriction on google-chrome), rc.local runs the script on
+   behalf of the user specified through an environment variable that must be
+   initialized during URLL setup.
+6. Moreover, rc.local (being run at system startup) runs as a root user process
+   and therefore it uses 'su' to run the URLL starting script also asking it to
+   preserve the environment variables that it just exported.
+7. The errors, if any, related to rc.local can be seen using the systemctl tool
+   as: systemctl status rc.local
+8. This script, using the environment variables received, stars the listener
+   process in the background.
+9. The URL launcher script simply reads the input and launches the uncommented
+   browser in incognito/private mode.
+10. Now, as the URLL module now starts during system startup, if ever it needs
+   to be stopped, kill -9 is used to terminate the process IDs obtained by
+   piping ps (for listing processes), grep (for searching URLL processes) and
+   awk (for extracting PIDs).
+
+-------------------
+Author- Rishi Dabre
