@@ -1,0 +1,6 @@
+#!/bin/bash
+#while true; do
+#	socat tcp-listen:1230,reuseaddr,fork system:/usr/local/bin/url_launcher
+#	sleep 2
+#done
+socat tcp-listen:1230,reuseaddr,fork system:$URLL_HOME/./url_launcher

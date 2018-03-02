@@ -1,0 +1,3 @@
+#!/bin/bash
+sudo kill -9 `ps -ef | grep url_listener | awk '{print $2}'`
+sudo kill -9 `ps -ef | grep url_launcher | awk '{print $2}'`

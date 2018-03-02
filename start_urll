@@ -1,0 +1,3 @@
+#!/bin/sh -e
+# This script will start the url_listener service in the background
+$URLL_HOME/./url_listener &
