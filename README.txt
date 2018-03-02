@@ -27,11 +27,22 @@ Requirements
 
 Setup
 -----
-1. Extract the main directory contents in a local directory
-2. Add (and modify accordingly) the following two lines at the end of your local
-   '.bashrc' file
-      export URLL_HOME=/path/to/local/directory
-      $URLL_HOME/start_urll
+1. On Linux system
+   - Extract the main directory contents in a local directory
+   - Add (and modify accordingly) the following two lines at the end of your
+     local '.bashrc' file
+         export URLL_HOME=/path/to/local/directory
+         $URLL_HOME/start_urll
+   - Reboot the machine and open a terminal
+2. On Android device
+   - Download the NetTools app from the Play Store (link below):
+     https://play.google.com/store/apps/details?id=atg.andr.nettools&hl=en
+   - Stay in the Netcat menu, enter the host name of Linux machine and the port
+     number as previously configured (keep 'Listen' unchecked)
+
+Directions
+----------
+Just enter the desired URL in the NetTools app, hit enter and watch your PC! :)
 
 Limitations
 -----------
