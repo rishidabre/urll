@@ -1,11 +1,11 @@
 README
 ------
 
-URLL (URL Listener) allows you to open URLs from your Android smartphone on a
-Linux system on the same LAN. We use the NetTools app on Android as 'netcat' to
-connect to and send messages on a predefined port of the Linux machine. Just as
-the URL sent from the phone is received by the system, a browser window pops
-open and you can enjoy a full size view of the same page.
+URLL (URL Listener) allows you to instantly open URLs from your Android
+smartphone on a Linux system on the same LAN. We use the NetTools app on Android
+as 'netcat' to connect to and send messages on a predefined port of the Linux
+machine. Just as the URL sent from the phone is received by the system, a
+browser window pops open and you can enjoy a full size view of the same page.
 
 This is the basic version of URLL and does not employ any kinds of security
 measures or restrictions. Further, the end sending URLs could very well be
