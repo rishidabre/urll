@@ -18,6 +18,7 @@ module.
 Requirements
 ------------
 1. On Linux system
+   - bash 4.3.48(1)-release (x86_64-pc-linux-gnu)
    - socat 1.7.3.1
    - mawk 1.3.3
    - google-chrome 60.0.3112.113
