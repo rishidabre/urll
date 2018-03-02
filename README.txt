@@ -33,6 +33,12 @@ Setup
       export URLL_HOME=/path/to/local/directory
       $URLL_HOME/start_urll
 
+Limitations
+-----------
+1. Since the URL listener starts through the .bashrc program, a terminal window
+   needs to be open in order for the connection to establish.
+2. URLs are not validated before passing through to browser.
+
 Files
 -----
 1. url_listener
