@@ -2,9 +2,9 @@ README
 ------
 
 URLL (URL Listener) allows you to instantly open URLs from your Android
-smartphone on a Linux system on the same LAN. We use the NetTools app on Android
-as 'netcat' to connect to and send messages on a predefined port of the Linux
-machine. Just as the URL sent from the phone is received by the system, a
+smartphone on a Linux system on the same LAN. We use the NetTools app on
+Android as 'netcat' to connect to and send messages on a predefined port of the
+Linux machine. Just as the URL sent from the phone is received by the system, a
 browser window pops open and you can enjoy a full size view of the same page.
 
 This is the basic version of URLL and does not employ any kinds of security
@@ -12,8 +12,9 @@ measures or restrictions. Further, the end sending URLs could very well be
 another Linux system or a system having the 'netcat' capability. Consequently,
 you may use any other suitable app of your choice for this purpose.
 
-This file contains the necessary information for setting up and using the 'urll'
-module.
+This file contains the necessary information for setting up and using the
+'urll' module. For more detailed information, please refer
+'technical_notes.txt'.
 
 Requirements
 ------------
@@ -29,12 +30,11 @@ Requirements
 Setup
 -----
 1. On Linux system
-   - Extract the main directory contents in a local directory
-   - Add (and modify accordingly) the following two lines at the end of your
-     local '.bashrc' file
-         export URLL_HOME=/path/to/local/directory
-         $URLL_HOME/start_urll
-   - Reboot the machine and open a terminal
+   - Extract the contents in source in a local directory, call it, URLL home
+   - Run the 'setup' file as follows:
+     ./setup <path_to_urll_home> <urll_user>
+     (Note: You will need to be a sudoer for this.)
+   - Reboot the machine
 2. On Android device
    - Download the NetTools app from the Play Store (link below):
      https://play.google.com/store/apps/details?id=atg.andr.nettools&hl=en
@@ -43,13 +43,19 @@ Setup
 
 Directions
 ----------
-Just enter the desired URL in the NetTools app, hit enter and watch your PC! :)
+1. Launch a URL
+   - Hit 'Start' in the NetTools app, enter the URL and hit enter, your page
+     should be already up on screen! :)
+2. Stop URLL
+   - Go to the URLL home directory and run './stop_urll'
+3. Revert changes from 'setup'
+   - From the URLL home directory, run './revert'
 
 Limitations
 -----------
-1. Since the URL listener starts through the .bashrc program, a terminal window
-   needs to be open in order for the connection to establish.
-2. URLs are not validated before passing through to browser.
+1. URLs are not validated before passing through to browser.
+2. The environmement that URLL is initialized with (during startup) is minimal
+   and therefore makes noticeable difference in the graphic quality of browser.
 
 Files
 -----
@@ -70,6 +76,14 @@ Files
 
 4. stop_urll
    - Stops the urll module.
+
+5. setup
+   - This file makes changes to the rc.local file in /etc so as to start URLL
+     during system startup.
+
+6. revert
+   - This file does the exact opposite of 'setup' i. e. revert rc.local to its
+     previous state.
 
 -------------------
 Author- Rishi Dabre
