@@ -1,0 +1,2 @@
+#!/bin/bash
+sudo mv /etc/rc.local.bkp /etc/rc.local
