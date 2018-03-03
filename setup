@@ -8,7 +8,7 @@ elif [[ "$2" == "" ]]; then
 fi
 fn=/etc/rc.local
 sudo cp $fn $fn.bkp
-sudo sed -i '$s/exit 0/export DISPLAY:=0/' $fn
+sudo sed -i '$s/exit 0/export DISPLAY=:0/' $fn
 sudo sed -i '$aexport URLL_HOME='$URLL_HOME'\' $fn
 sudo sed -i '$aexport URLL_USER='$2'\' $fn
 sudo sed -i '$asu '$2' --preserve-environment -c "'$1'/start_urll"\' $fn
