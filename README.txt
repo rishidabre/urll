@@ -54,8 +54,6 @@ Directions
 Limitations
 -----------
 1. URLs are not validated before passing through to browser.
-2. The environmement that URLL is initialized with (during startup) is minimal
-   and therefore makes noticeable difference in the graphic quality of browser.
 
 Files
 -----
