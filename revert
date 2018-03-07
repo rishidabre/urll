@@ -1,6 +1,6 @@
 #!/bin/bash
-if [ -f /etc/rc.local.bkp ]; then
-	sudo mv /etc/rc.local.bkp /etc/rc.local
+if [ -f /etc/profile.d/init_urll.sh ]; then
+	sudo rm -f /etc/profile.d/init_urll.sh
 	echo "Reverted"
 else
 	echo "Nothing to revert"
