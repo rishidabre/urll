@@ -1,10 +1,16 @@
 README
 ------
 
-URLL (URL Listener) allows you to instantly open URLs from your Android
-smartphone on a Linux system on the same LAN. We use the NetTools app on
-Android as 'netcat' to connect to and send messages on a predefined port of the
-Linux machine. Just as the URL sent from the phone is received by the system, a
+Starting with the ability of launching a given URL in a browser instantly
+from our smartphone, the URLL (URL Listener) utility now provides a few more
+actions like lock, unlock user session and even shutdown the machine. Owing to
+its extended capabilities and a potential to offer even more, it can very well
+be called as 'Use Right Love Linux'.
+
+Primarily, URLL allows you to instantly open URLs from your Android smartphone
+on a Linux system on the same LAN. We use the NetTools app on Android as
+'netcat' to connect to and send messages on a predefined port of the Linux
+machine. Just as the URL sent from the phone is received by the system, a
 browser window pops open and you can enjoy a full size view of the same page.
 
 This is the basic version of URLL and does not employ any kinds of security
@@ -13,7 +19,7 @@ another Linux system or a system having the 'netcat' capability. Consequently,
 you may use any other suitable app of your choice for this purpose.
 
 This file contains the necessary information for setting up and using the
-'urll' module. For more detailed information, please refer
+'urll' module. For detailed technical information, please refer
 'technical_notes.txt'.
 
 Requirements
@@ -46,9 +52,15 @@ Directions
 1. Launch a URL
    - Hit 'Start' in the NetTools app, enter the URL and hit enter, your page
      should be already up on screen! :)
-2. Stop URLL
+2. Perform new actions
+   - These actions can be performed by following the steps from 1 above and
+     sending instead of a URL, the following commands-
+     i. lock : to lock the current user session
+     ii. unlock : to unlock the current user session
+     iii. shutdown : to shutdown the machine
+3. Stop URLL
    - Go to the URLL home directory and run './stop_urll'
-3. Revert changes from 'setup'
+4. Revert changes from 'setup'
    - From the URLL home directory, run './revert'
 
 Limitations
