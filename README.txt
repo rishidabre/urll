@@ -32,7 +32,7 @@ Setup
 1. On Linux system
    - Extract the contents in source in a local directory, call it, URLL home
    - Run the 'setup' file as follows:
-     ./setup <path_to_urll_home> <urll_user>
+     ./setup <path_to_urll_home>
      (Note: You will need to be a sudoer for this.)
    - Reboot the machine
 2. On Android device
@@ -54,8 +54,7 @@ Directions
 Limitations
 -----------
 1. URLs are not validated before passing through to browser.
-2. The environmement that URLL is initialized with (during startup) is minimal
-   and therefore makes noticeable difference in the graphic quality of browser.
+2. Device authentication is not supported.
 
 Files
 -----
@@ -78,8 +77,8 @@ Files
    - Stops the urll module.
 
 5. setup
-   - This file makes changes to the rc.local file in /etc so as to start URLL
-     during system startup.
+   - This file creates a script named init_urll.sh under /etc/profile.d which
+     takes care of starting URLL after user logs in.
 
 6. revert
    - This file does the exact opposite of 'setup' i. e. revert rc.local to its
