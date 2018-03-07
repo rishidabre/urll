@@ -1,5 +1,18 @@
 #!/bin/sh
 # This service reads a URL and launches it in google chrome in incognito mode.
 read URL
-google-chrome --incognito $URL
-#firefox -private $URL
+case $URL in
+	unlock)
+		loginctl unlock-session
+		;;
+	lock)
+		loginctl lock-session
+		;;
+	shutdown)
+		shutdown now
+		;;
+	*)
+		google-chrome --incognito $URL &
+		#firefox -private $URL &
+		;;
+esac
