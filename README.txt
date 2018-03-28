@@ -96,5 +96,15 @@ Files
    - This file does the exact opposite of 'setup' i. e. revert rc.local to its
      previous state.
 
+Issues
+------
+1. Currently, using commands 'lock' and 'unlock' evokes an issue related to
+   user sessions in Ubuntu 16.04 LTS. This causes a user to, after previously
+   having used above commands, see the error message 'Authentication failure'
+   on the greeter screen when they manually lock their session. As per the
+   discussion on the relevant thread, upgrading to 17.10 solves the issue (but
+   we have not tested it).
+   Link to bug: https://bugs.launchpad.net/ubuntu/+source/unity/+bug/1733557
+
 -------------------
 Author- Rishi Dabre
